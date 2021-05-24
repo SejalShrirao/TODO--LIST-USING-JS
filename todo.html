@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<!-- 1. Create a list -->
+	
+	<!-- 2. Give 2 default list items -->
+
+	<!-- 3. Display the list -->
+
+	<!-- 4. Add items to the list -->
+
+<title>TODO LIST</title>
+	
+	<style type="text/css">
+		.the
+		{
+		   font-size: 30px;
+           margin-top: 50px;
+           text-align: center;
+		}
+		.all
+		{
+          margin: 20px;
+          display: block;
+          margin: auto;
+          width: 25%;
+          border: 3px solid #2ec02e;
+          padding: 60px;
+          text-align: center;
+          margin-top: 50px;
+        }
+        #d1
+        {
+          font-size: 37px;
+          color: red;
+        }
+        input#new_list_item 
+        {  
+          width: 60%;
+          border: none;
+          padding: 10px;
+        }
+        button
+        {
+	      padding: 8px 15px;
+          border: none;
+          color: #ff0000f5;
+          font-size: 15px;
+          font-weight: 600;
+          margin-left: 20px;
+        }
+        li 
+        {
+          font-size: 20px;
+        }
+	</style>
+</head>
+<body style="background-color: #f6d3d3;">
+<div class="the">
+	<h1>GOOD MORNING!</h1>
+</div>
+
+<div class="all">
+
+	<h3 id="d1">Everyday ToDo List:</h3>
+
+	<input type="text" id="new_list_item">
+	<button onclick="addItem()">Add Item</button>
+	<br><br><br>
+	
+	<script type="text/javascript">
+		var listItems= ['Do Routine Yoga','Buy Groceries','Make Breakfast'];
+	</script>
+
+	<script type="text/javascript">
+		function addItem()
+		{
+			var tempItem= document.getElementById("new_list_item").value;
+			listItems .push(tempItem);
+			displayList(tempItem);
+			document.getElementById("new_list_item").value =' '; 
+		}
+	</script>
+	
+	<div id="display">
+		
+		<ul>
+			<script type="text/javascript">
+				listItems.forEach(displayList);
+
+				function displayList(item)
+				{
+					document.getElementById("display").innerHTML += "<li>"+item+"</li>"
+				}
+			</script>
+		</ul>
+	</div>	
+</div>
+</body>
+</html>
